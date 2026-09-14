@@ -1,0 +1,328 @@
+---
+basics:
+  name: Vlad-Mihail Mureșan
+  title: Senior Kotlin | Java Fullstack Developer
+  subtitle: Independent contractor (PFA)
+  career_start: 2016
+  summary: >
+    Full-stack engineer with {years} years in Java and Kotlin, spent mostly on systems where
+    the numbers have to be right — trading, payments, billing, invoicing, and tax. I take a
+    feature from the data model through the API to the screen on top, and I work out what it
+    should do by talking to the business side rather than waiting for a spec.
+  photo: /assets/photo.jpg
+  contact:
+    - icon: phone
+      text: "+40 729 358 430"
+    - icon: mail
+      text: muresanvladmihail.pfa@gmail.com
+      link: mailto:muresanvladmihail.pfa@gmail.com
+    - icon: pin
+      text: Timișoara, Romania
+    - icon: link
+      text: LinkedIn
+      link: https://www.linkedin.com/in/mure%C8%99an-vlad-mihail/
+    - icon: code
+      text: github.com/MuresanVladMihail
+      link: https://github.com/MuresanVladMihail
+
+skill_groups:
+  - id: backend
+    label: Backend
+  - id: frontend
+    label: Frontend
+  - id: data
+    label: Data & APIs
+  - id: platform
+    label: Platform & Tooling
+  - id: testing
+    label: Testing
+
+skills:
+  - { name: Java,             since: 2016, group: backend }
+  - { name: Kotlin,           since: 2022, group: backend }
+  - { name: Spring Framework, since: 2018, group: backend }
+  - { name: Hibernate,        since: 2020, group: backend }
+  - { name: Go,               since: 2025, group: backend }
+  - { name: Node.js,          since: 2024, group: backend }
+
+  - { name: TypeScript,       since: 2019, group: frontend }
+  - { name: Angular,          since: 2019, group: frontend }
+  - { name: Vue.js,           since: 2024, group: frontend }
+  - { name: Material UI,      since: 2021, group: frontend }
+  - { name: Bootstrap,        since: 2021, group: frontend }
+
+  - { name: SQL,              since: 2018, group: data }
+  - { name: Flyway,           since: 2019, group: data }
+  - { name: Liquibase,        since: 2022, group: data }
+  - { name: Protobuf,         since: 2023, group: data }
+  - { name: gRPC,             since: 2025, group: data }
+
+  - { name: Docker,           since: 2021, group: platform }
+  - { name: Kubernetes,       since: 2025, group: platform }
+  - { name: GNU/Linux,        since: 2019, group: platform }
+  - { name: Keycloak,         since: 2022, group: platform }
+  - { name: Pub/Sub,          since: 2026, group: platform }
+  - { name: AWS SQS,          since: 2023, group: platform }
+
+  - { name: Mockito + JUnit,  since: 2021, group: testing }
+  - { name: Playwright,       since: 2023, group: testing }
+
+experience:
+  - company: EDEKA Bank
+    role: Senior Full-Stack Kotlin | Vue Developer
+    tagline: Building B2B Merchant Management & E-Commerce Platform
+    start: "2026-03"
+    end: present
+    priority: 1
+    context: >
+      The client is the banking arm of one of Germany's largest food retail groups. The platform
+      handles merchant onboarding, billing, and payment operations across a set of cloud-native
+      services on GCP.
+    scale: Team of five full-stack developers and two product managers · around 700 merchant invoices a month
+    projects:
+      - name: Merchant Management Platform
+        text: >
+          Building a comprehensive B2B platform for merchant onboarding, management, and
+          administration. Developing scalable frontend interfaces with Vue 3 and TypeScript,
+          while implementing backend services using Kotlin and Spring Boot.
+      - name: Financial Services & Payment Integrations
+        text: >
+          Delivering billing automation, payment processing workflows, SEPA integrations,
+          and KYC compliance features to support secure financial transactions and
+          regulatory requirements.
+    activities:
+      - Taking features end to end — schema, service, API, and the Vue screen on top — instead of handing off between teams.
+      - Agreeing scope and API contracts with the product owner and the architect before implementation starts.
+      - Building the asynchronous flows between services on Google Pub/Sub, including what happens on retry when a downstream service rejects an event.
+      - Reviewing pull requests on both the Kotlin and the frontend side.
+    stack:
+      Backend: Kotlin, Spring Boot, Microservices, REST APIs, Pub/Sub
+      Frontend: Vue 3, TypeScript
+      Cloud & Infrastructure: Google Cloud Platform (GCP)
+
+  - company: MHP
+    role: Senior Full-Stack Kotlin | Java Developer
+    tagline: Invoicing, billing, and tax for the Volkswagen Group
+    start: "2023-01"
+    end: present
+    priority: 1
+    context: >
+      MHP is the management and IT consultancy of the Porsche group. The work runs together with
+      Volkswagen, on the systems that handle invoicing, billing, and tax across the Group's brands.
+    scale: Around 900 subscriptions processed a day · team of three developers and an architect, with a PM and requirements engineers
+    projects:
+      - name: ART MonetizationKit
+        text: >
+          The integration product behind invoicing, billing, accounting, and tax for the Volkswagen
+          Group. It exposes API endpoints that handle subscription and purchase data and routes it
+          to the third-party systems that need it.
+      - name: SDAC
+        text: >
+          Two projects centered on issue-ticket management for MHP's customers.
+    activities:
+      - Leading the team day to day — keeping people unblocked, and covering the architect role when missing.
+      - Designing new components and reviewing the ones the rest of the team builds.
+      - Owning the retry path for billing events on SQS — idempotency keys so a redelivered message can't bill twice, dead-letter queues for what keeps failing, and a replay endpoint the operations team uses to clear them.
+      - Discussing trade-offs and timelines directly with the client's business side.
+      - Interviewing candidates for open positions.
+    stack:
+      Backend: Kotlin, Java 17, Spring, Hibernate, PostgreSQL, OpenAPI, Kotest, Cucumber
+      Messaging: AWS SQS with dead-letter queues
+      Frontend: Angular, PrimeNG, TypeScript
+      Misc: SAFe, Git, GitHub, GitHub Actions, Postman, Bruno
+
+  - company: Quick Suite Trading
+    role: Senior Full-Stack Java Developer
+    tagline: Trading platforms, internal tools, and the authentication stack
+    start: "2016-10"
+    end: present
+    priority: 1
+    context: >
+      The client builds trading technology for clearing and trading firms — order entry, market data,
+      and the back-office systems behind them.
+    projects:
+      - name: QTAG-Keycloak
+        text: >
+          Migrating the company's in-house login into Keycloak: custom authenticator SPIs in Java
+          that call internal services over HTTPS, custom Freemarker login themes, and support for
+          biometric and passkey sign-in across realms.
+      - name: Bursa Malaysia
+        text: >
+          Developed a proxy application in Node.js using the Playwright framework, serving as a
+          conduit between applications in our ecosystem and the Bursa Malaysia trading platform,
+          so that users could execute trades as if they were interacting with it directly.
+      - name: Lite
+        text: >
+          A web trading platform with real-time streaming futures and options quotes. On it since day
+          one, when it was me and my team leader; today it carries the full order flow and the
+          information traders work from.
+      - name: Products Tool
+        text: >
+          An internal project consisting of various modules that display information about the
+          Products database, the oldest database in the company.
+      - name: QST-Careers
+        text: >
+          The official job portal of Computers Voice Systems: a centralized hub for job seekers to
+          apply across different domains and for company administrators to create job listings.
+    activities:
+      - Sole developer on most of these projects — database design, backend, frontend, deployment, and the maintenance afterwards.
+      - Gathering requirements straight from the business side and turning them into a working system, without a spec handed down.
+      - Fixing security issues across Java dependencies, Dockerfiles, and Kubernetes manifests.
+      - Writing the documentation other teams and clients work from.
+    stack:
+      Backend: Java, Spring, Keycloak (custom SPIs, Freemarker themes), Node.js
+      Frontend: TypeScript, Angular
+      Misc: Docker, Kubernetes, GNU/Linux, Playwright, Git
+
+  - company: SITA
+    role: Full-Stack Engineer
+    tagline: Environmental assessment tooling for aviation
+    start: "2025-05"
+    end: "2025-08"
+    priority: 1
+    context: >
+      SITA builds IT and communications systems for the air transport industry. The work sat in the
+      R&D team: EU rules currently account for CO₂ alone, and the research looked at how to measure
+      the wider climate impact of a flight.
+    activities:
+      - Turned research on non-CO₂ climate effects into tooling the business side could run itself.
+      - Built both ends of it — Spring services and the Angular screens on top.
+    stack:
+      Backend: Java, Spring
+      Frontend: Angular, TypeScript
+
+  - company: Zyter|TruCare
+    role: Full-Stack Engineer
+    tagline: Angular modernization of a care-management platform
+    start: "2023-11"
+    end: "2024-03"
+    priority: 2
+    context: >
+      The client runs a care-management platform used by healthcare providers, in production
+      throughout the work.
+    activities:
+      - Led the frontend upgrade from Angular 8 to 14 — six major versions on a platform that could not go offline for it.
+      - Built new components on the upgraded frontend, and fixed backend bugs affecting stability.
+    stack:
+      Backend: Java, Spring Boot
+      Frontend: Angular, TypeScript
+
+  - company: Swisscom
+    role: Full-Stack Go Developer
+    tagline: Design new services
+    start: "2023-05"
+    end: "2023-11"
+    priority: 1
+    context: >
+      The client is the largest telecommunications provider in Switzerland.
+    projects:
+      - name: Voting app
+        text: Allows customers to create and vote for issues they want implemented by Swisscom.
+      - name: Exotrack
+        text: Monitoring application for clients' infrastructure.
+      - name: Service catalog
+        text: >
+          Offers customers the possibility to choose between different customizations and plans for
+          VMs and dedicated servers.
+    activities:
+      - Owning the frontend architecture for three new services, built on Swisscom's own design system.
+      - Working on the Go backend as well, so the API shape was settled in one place instead of between two teams.
+      - Cutting the work into tasks, estimating it, and delivering on the agreed dates.
+    stack:
+      Backend: Go, Gin, MariaDB, Docker
+      Frontend: TypeScript, Vue.js 3, SDX components
+
+  - company: Dufry
+    role: Senior Java Developer
+    tagline: Design and rewrite of a new service
+    start: "2022-04"
+    end: "2023-06"
+    priority: 1
+    context: The client is a global travel retailer with operations in over 65 countries.
+    projects:
+      - name: Assortment Management
+        text: >
+          Responsible for the maintenance and operational support used to plan product selection
+          and quantities across various shops.
+      - name: Local Extensions
+        text: >
+          Involved in the architecture design of the service database and Java structure by rewriting
+          a section of the Assortment Management application.
+      - name: Purchasing Order Management
+        text: >
+          Developed and performance-tuned a purchasing control portal that facilitates the weekly
+          purchase proposals for all companies within the group.
+    highlights:
+      - Improved performance by up to 800% on various endpoints by rewriting Java logic and SQL Server queries.
+      - Resolved a set of security issues by upgrading all third-party libraries.
+    activities:
+      - Designed the service database and Java structure for the rewrite, and drew the flows the team then worked from.
+      - Split the rewrite into tasks, assigned them, and reviewed the pull requests.
+      - Mentored two interns and left behind written and video documentation.
+    stack:
+      Backend: Microservices, Java 17, Spring, SQL Server, Docker, REST APIs, JUnit/Mockito
+      Misc: Git, GitHub, DevOps, Azure, draw.io
+
+  - company: KeborMed
+    role: Full-Stack Web Developer
+    tagline: Design a proof of concept
+    start: "2021-11"
+    end: "2022-03"
+    priority: 2
+    context: >
+      The client is a startup in the healthcare industry, transforming medical hardware manufacturers
+      into integrated solution providers.
+    projects:
+      - name: KRONIQX
+        text: >
+          Allows healthcare providers to build their own RPM solution from pre-built modules that can
+          be customized to fit any organization's exact needs.
+    activities:
+      - Built the proof of concept on my own — database, backend, frontend, deployment.
+      - Reported to the CEO directly and presented the results to prospective customers.
+      # nota: rolurile încheiate la trecut, cele curente cu -ing. Ține-o așa.
+    stack:
+      Backend: Microservices, Kotlin, Spring Framework, Azure SQL, Docker, REST APIs, Protobuf, gRPC, Mockito/JUnit
+      Frontend: TypeScript, Angular 13, Angular Material, Keycloak
+      Misc: Bitbucket, Git, GNU/Linux, Jira, Confluence, draw.io
+
+  - company: Luxoft
+    role: Senior Java Developer
+    tagline: Data pipeline feeding autonomous-driving models
+    start: "2021-07"
+    end: "2022-01"
+    priority: 2
+    context: >
+      The client is a global digital transformation company offering software development and IT
+      solutions for complex digital challenges.
+    projects:
+      - name: aws-proserve-partner-dx
+        text: >
+          Handles conversions of data between different video formats and more, feeding AIs for
+          self-driving cars for clients such as Audi, BMW, Volkswagen, Continental, and Mobileye.
+    activities:
+      - Picked features up directly from the product owners and shipped them into a system already in production.
+      - Added modules on top of AWS DynamoDB and kept the existing ones running.
+    stack:
+      Backend: Java 11, Google Guice, DynamoDB, AWS, Docker, REST APIs, Mockito/JUnit
+      Misc: Bitbucket, Git, Jira, Confluence
+
+education:
+  - institution: University „Aurel Vlaicu"
+    degree: Master's Degree in Advanced Computer Science
+    location: Arad
+    start: "2019"
+    end: "2021"
+  - institution: University „Aurel Vlaicu"
+    degree: Bachelor's Degree in Computer Science
+    location: Arad
+    start: "2016"
+    end: "2019"
+
+# languages:
+#   - { name: Romanian, level: Native }
+#   - { name: English,  level: C1 }
+#   - { name: German,   level: A2 }
+#
+# certifications:
+#   - { name: "Example Certificate", issuer: "Issuer", year: 2026 }
