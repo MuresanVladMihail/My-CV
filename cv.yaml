@@ -280,7 +280,7 @@ experience:
     activities:
       - Built the proof of concept on my own — database, backend, frontend, deployment.
       - Reported to the CEO directly and presented the results to prospective customers.
-      # nota: rolurile încheiate la trecut, cele curente cu -ing. Ține-o așa.
+      # note: finished roles in the past tense, current ones with -ing. Keep it that way.
     stack:
       Backend: Microservices, Kotlin, Spring Framework, Azure SQL, Docker, REST APIs, Protobuf, gRPC, Mockito/JUnit
       Frontend: TypeScript, Angular 13, Angular Material, Keycloak
@@ -308,12 +308,12 @@ experience:
       Misc: Bitbucket, Git, Jira, Confluence
 
 education:
-  - institution: University „Aurel Vlaicu"
+  - institution: '"Aurel Vlaicu" University'
     degree: Master's Degree in Advanced Computer Science
     location: Arad
     start: "2019"
     end: "2021"
-  - institution: University „Aurel Vlaicu"
+  - institution: '"Aurel Vlaicu" University'
     degree: Bachelor's Degree in Computer Science
     location: Arad
     start: "2016"

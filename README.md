@@ -1,61 +1,61 @@
-## Setup (o dată)
+## Setup (once)
 
 ```bash
 # macOS
 brew install typst
 # Arch
 sudo pacman -S typst
-# oriunde (binar standalone)
+# anywhere (standalone binary)
 curl -fsSL https://github.com/typst/typst/releases/latest/download/typst-x86_64-unknown-linux-musl.tar.xz \
   | tar -xJ --strip-components=1 -C ~/.local/bin --wildcards '*/typst'
 ```
 
-Pentru IntelliJ / VS Code: extensia **Tinymist Typst** dă preview live și autocomplete.
+For IntelliJ / VS Code: the **Tinymist Typst** extension gives you live preview and autocomplete.
 
-## Uz zilnic
+## Day-to-day use
 
 ```bash
-make          # PDF complet în build/
-make short    # doar rolurile cu priority: 1
-make watch    # recompilează la fiecare salvare, ține-l deschis lângă editor
+make          # full PDF in build/
+make short    # only the roles with priority: 1
+make watch    # recompiles on every save, keep it open next to your editor
 ```
 
-## Cum adaugi ceva
+## How to add something
 
-**Un job nou** — copiază un bloc din `experience:` și pune-l primul. Cheile `tagline`,
-`context`, `projects`, `highlights`, `activities`, `stack` sunt toate opționale:
-ce lipsește pur și simplu nu se randează.
+**A new job** — copy a block from `experience:` and put it first. The keys `tagline`,
+`context`, `projects`, `highlights`, `activities` and `stack` are all optional:
+whatever is missing simply does not get rendered.
 
 ```yaml
-  - company: Client nou
+  - company: New client
     role: Principal Backend Engineer
     start: "2027-01"
     end: present
     priority: 1
     projects:
-      - name: Ceva
-        text: Descriere.
+      - name: Something
+        text: Description.
     stack:
       Backend: Kotlin, Spring Boot
 ```
 
-**Un skill nou** — o linie, cu anul în care ai început, nu cu numărul de ani:
+**A new skill** — one line, with the year you started, not the number of years:
 
 ```yaml
   - { name: Rust, since: 2027, group: backend }
 ```
 
-Anii se recalculează la fiecare build (`10 yrs` azi, `11 yrs` la anul), deci CV-ul nu
-mai îmbătrânește singur. Pentru ce nu mai folosești, îngheață numărul cu `until: 2024`.
+The years are recomputed on every build (`10 yrs` today, `11 yrs` next year), so the CV no
+longer ages on its own. For anything you no longer use, freeze the number with `until: 2024`.
 
-**O secțiune nouă** (limbi, certificări) — decomentează blocul din coada lui `cv.yaml`.
-Pentru ceva complet nou, adaugi cheia în YAML și 4 rânduri în `resume()` din `lib/resume.typ`.
+**A new section** (languages, certifications) — uncomment the block at the bottom of `cv.yaml`.
+For something entirely new, add the key to the YAML and 4 lines to `resume()` in `lib/resume.typ`.
 
-## Variante
+## Variants
 
-`priority` filtrează rolurile: `1` = intră mereu, `2` = doar în varianta lungă, `3` = arhivă.
-`make short` scoate un PDF cu doar `priority: 1`. Nu ștergi niciodată nimic din istoric —
-doar îi scazi prioritatea.
+`priority` filters the roles: `1` = always included, `2` = long variant only, `3` = archive.
+`make short` produces a PDF with only `priority: 1`. You never delete anything from the
+history — you just lower its priority.
 
-Pentru o variantă în altă limbă: `cp cv.yaml cv.de.yaml`, traduci textele, și un
-`cv.de.typ` de 3 linii care încarcă `cv.de.yaml`. Designul rămâne partajat.
+For a variant in another language: `cp cv.yaml cv.de.yaml`, translate the text, and add a
+3-line `cv.de.typ` that loads `cv.de.yaml`. The design stays shared.
