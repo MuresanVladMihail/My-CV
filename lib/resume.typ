@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// DESIGNUL CV-ULUI. Conținutul stă în cv.yaml — aici umbli doar când vrei să
-// schimbi cum arată (culori, spațieri, ordinea secțiunilor).
+// CV DESIGN. The content lives in cv.yaml — you only come here when you want
+// to change how it looks (colors, spacing, the order of the sections).
 // ─────────────────────────────────────────────────────────────────────────────
 
 #let theme = (
@@ -11,7 +11,7 @@
   chip: rgb("#f1f2f4"),
 )
 
-// ── Iconițe (SVG inline, fără dependențe externe) ────────────────────────────
+// ── Icons (inline SVG, no external dependencies) ─────────────────────────────
 #let icon-paths = (
   phone: "<rect x='6' y='2' width='12' height='20' rx='2.5'/><line x1='10' y1='18.5' x2='14' y2='18.5'/>",
   mail: "<rect x='2.5' y='5' width='19' height='14' rx='2'/><path d='M3 7l9 6 9-6'/>",
@@ -31,7 +31,7 @@
   box(baseline: 1.5pt, image(bytes(svg), format: "svg", width: size))
 }
 
-// ── Date & ani calculați automat ─────────────────────────────────────────────
+// ── Dates & automatically computed years ─────────────────────────────────────
 #let months = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
 #let fmt-date(value) = {
@@ -51,7 +51,7 @@
 
 #let plural-years(n) = str(n) + " yr" + if n == 1 { "" } else { "s" }
 
-// ── Blocuri ──────────────────────────────────────────────────────────────────
+// ── Blocks ───────────────────────────────────────────────────────────────────
 #let section(title) = {
   block(above: 16pt, below: 8pt)[
     #text(size: 10.5pt, weight: 700, tracking: 1.6pt, fill: theme.ink, upper(title))
@@ -60,7 +60,7 @@
   ]
 }
 
-// Bullet cu indentare agățată: rândurile continuate se aliniază sub text, nu sub punct.
+// Bullet with a hanging indent: wrapped lines line up under the text, not the dot.
 #let bullet-row(body) = grid(
   columns: (10pt, 1fr),
   row-gutter: 0pt,
@@ -85,7 +85,7 @@
 
 #let job(entry) = {
   block(breakable: true, above: 14pt, below: 4pt)[
-    // Titlul, firma și contextul rămân împreună și nu se rup de restul intrării.
+    // The role, company and context stay together and never break away from the entry.
     #block(breakable: false, sticky: true, below: 0pt)[
       #grid(
         columns: (1fr, auto),
@@ -147,7 +147,7 @@
   let used = ()
   let cells = ()
   for g in groups {
-    // Sortate descrescător după ani — ordinea din cv.yaml nu contează.
+    // Sorted by years, descending — the order in cv.yaml does not matter.
     let items = all
       .filter(s => s.at("group", default: "") == g.id)
       .sorted(key: s => -years-since(s.since, until: s.at("until", default: none)))
@@ -215,7 +215,7 @@
   ]
 }
 
-// ── Documentul ───────────────────────────────────────────────────────────────
+// ── The document ─────────────────────────────────────────────────────────────
 #let resume(data, max-priority: 3) = {
   set document(
     title: data.basics.name + " — CV",

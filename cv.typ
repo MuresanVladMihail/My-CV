@@ -1,12 +1,12 @@
-// Punctul de intrare. De obicei nu ai ce edita aici.
+// The entry point. There is usually nothing to edit in here.
 //
 //   make            → build/CV-Vlad-Muresan.pdf
-//   make watch      → recompilează la fiecare salvare
-//   make short      → varianta scurtă (doar priority 1)
+//   make watch      → recompiles on every save
+//   make short      → the short variant (priority 1 only)
 
 #import "lib/resume.typ": resume
 
-// 1 = doar rolurile esențiale, 3 = tot. Se poate suprascrie din linia de comandă:
+// 1 = only the essential roles, 3 = everything. Can be overridden from the command line:
 //   typst compile --input max-priority=1 cv.typ
 #let max-priority = int(sys.inputs.at("max-priority", default: "3"))
 
