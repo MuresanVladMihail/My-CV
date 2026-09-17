@@ -41,6 +41,7 @@ skills:
   - { name: Java,             since: 2016, group: backend }
   - { name: Kotlin,           since: 2022, group: backend }
   - { name: Spring Framework, since: 2018, group: backend }
+  - { name: Webflux,          since: 2023, group: backend }
   - { name: Hibernate,        since: 2020, group: backend }
   - { name: Go,               since: 2025, group: backend }
   - { name: Node.js,          since: 2024, group: backend }
@@ -126,7 +127,7 @@ experience:
       - Discussing trade-offs and timelines directly with the client's business side.
       - Interviewing candidates for open positions.
     stack:
-      Backend: Kotlin, Java 17, Spring, Hibernate, PostgreSQL, OpenAPI, Kotest, Cucumber
+      Backend: Kotlin, Java 17, Spring, R2DBC, Webflux, PostgreSQL, OpenAPI, Kotest, Cucumber
       Messaging: AWS SQS with dead-letter queues
       Frontend: Angular, PrimeNG, TypeScript
       Misc: SAFe, Git, GitHub, GitHub Actions, Postman, Bruno
